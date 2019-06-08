@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LEIHS SHOPPING CART</title>
+
+    <link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8">
+    <script src="https://code.jquery.com/jquery-2.2.4.js" charset="utf-8"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <div class="shopping-cart">
+      <div class="title">
+        LEIHS SHOPPING CART
+      </div>
+
+      <!-- Product #1 -->
+      <div id="div1">
+      <div class="item">
+        <div class="buttons">
+          <span><button class="delete-btn" id="button1"></button></span>
+          <span class="like-btn"></span>
+        </div>
+
+        <div class="image">
+          <img src="item-1.png" alt="Canon EOS 5D Mark IV" />
+        </div>
+
+        <div class="description">
+          <span>Digital Camera</span>
+          <span>EOS 5D Mark IV</span>
+          <span>Canon</span>
+        </div>
+
+        <div class="quantity">
+          <button class="minus-btn" type="button" name="button">
+            <img src="minus.svg" alt="" />
+          </button>
+          <input type="text" name="name" value="1">
+          <button class="plus-btn" type="button" name="button">
+            <img src="plus.svg" alt="" />
+          </button>
+        </div>
+      </div>
+      </div>
+
+      <!-- Product #2 -->
+      <div id="div2">
+      <div class="item">
+        <div class="buttons">
+          <span class="delete-btn" id="button2"></span>
+          <span class="like-btn"></span>
+        </div>
+
+        <div class="image">
+          <img src="item-2.png" alt=""/>
+        </div>
+
+        <div class="description">
+          <span>Lens</span>
+          <span>EF 24-70mm f/2.8L</span>
+          <span>Canon</span>
+        </div>
+
+        <div class="quantity">
+          <button class="minus-btn" type="button" name="button">
+            <img src="minus.svg" alt="" />
+            </button>
+          <input type="text" name="name" value="1">
+          <button class="plus-btn" type="button" name="button">
+            <img src="plus.svg" alt="" />
+          </button>
+        </div>
+      </div>
+    </div>
+
+      <!-- Product #3 -->
+      <div id="div3">
+      <div class="item">
+        <div class="buttons">
+          <span class="delete-btn" id="button3"></span>
+          <span class="like-btn"></span>
+        </div>
+
+        <div class="image">
+          <img src="item-3.png" alt="" />
+        </div>
+
+        <div class="description">
+          <span>Hand Lightning</span>
+          <span>430EX II</span>
+          <span>Canon</span>
+        </div>
+
+        <div class="quantity">
+          <button class="minus-btn" type="button" name="button">
+            <img src="minus.svg" alt="" />
+          </button>
+          <input type="text" name="name" value="1">
+          <button class="plus-btn" type="button" name="button">
+            <img src="plus.svg" alt="" />
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+    $(document).ready(function(){
+      $("#button1").click(function(){
+        $("#div1").fadeOut();
+      });
+      });
+
+      $(document).ready(function(){
+        $("#button2").click(function(){
+          $("#div2").fadeOut();
+        });
+        });
+
+        $(document).ready(function(){
+          $("#button3").click(function(){
+            $("#div3").fadeOut();
+          });
+          });
+    </script>
+
+    <script type="text/javascript">
+      $('.minus-btn').on('click', function(e) {
+    		e.preventDefault();
+    		var $this = $(this);
+    		var $input = $this.closest('div').find('input');
+    		var value = parseInt($input.val());
+
+    		if (value > 1) {
+    			value = value - 1;
+    		} else {
+    			value = 0;
+    		}
+        $input.val(value);
+	     });
+
+    	$('.plus-btn').on('click', function(e) {
+    		e.preventDefault();
+    		var $this = $(this);
+    		var $input = $this.closest('div').find('input');
+    		var value = parseInt($input.val());
+
+    		if (value < 100) {
+      		value = value + 1;
+    		} else {
+    			value =100;
+    		}
+    		$input.val(value);
+    	});
+
+      $('.like-btn').on('click', function() {
+        $(this).toggleClass('is-active');
+      });
+    </script>
+
+
+  </body>
+</html>
